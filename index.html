@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parts J&L - Peças e Acessórios para Celular</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        /* ===== RESET E VARIÁVEIS ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --roxo: #7B2FBE;
+            --azul: #00C2FF;
+            --magenta: #FF006E;
+            --verde-whats: #25D366;
+            --fundo-escuro: #0A0A1A;
+            --fundo-card: #1a1a2e;
+            --texto-claro: #ffffff;
+            --texto-cinza: #b8b8b8;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--fundo-escuro);
+            color: var(--texto-claro);
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER FIXO ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(123, 47, 190, 0.3);
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container img {
+            height: 50px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(123, 47, 190, 0.6));
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--texto-claro);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--roxo), var(--azul));
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .btn-whatsapp-header {
+            background: var(--verde-whats);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(37, 211, 102, 0.6);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            margin-top: 90px;
+            min-height: 600px;
+            background: linear-gradient(135deg, var(--roxo), var(--azul), var(--magenta));
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+        }
+
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: float 10s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+            50% { transform: translateY(-100px) scale(1.5); opacity: 1; }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
+                         0 0 60px var(--azul);
+            margin-bottom: 1rem;
+            animation: neonPulse 2s infinite alternate;
+        }
+
+        @keyframes neonPulse {
+            from { text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px var(--azul); }
+            to { text-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 80px var(--magenta); }
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .btn-cta {
+            background: white;
+            color: var(--roxo);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(255, 255, 255, 0.5);
+        }
+
+        /* ===== BARRA DE CATEGORIAS ===== */
+        .categorias-bar {
+            background: var(--fundo-card);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(123, 47, 190, 0.3);
+            position: sticky;
+            top: 90px;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .categorias-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .categorias-list {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            white-space: nowrap;
+        }
+
+        .categoria-item {
+            background: rgba(123, 47, 190, 0.2);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            font-weight: 600;
+        }
+
+        .categoria-item:hover,
+        .categoria-item.active {
+            background: linear-gradient(135deg, var(--roxo), var(--azul));
+            border-color: var(--azul);
+            box-shadow: 0 0 20px rgba(0, 194, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* ===== SEÇÃO DE BUSCA ===== */
+        .busca-section {
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .busca-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #campoBusca {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1.5rem;
+            border-radius: 50px;
+            border: 2px solid rgba(123, 47, 190, 0.5);
+            background: var(--fundo-card);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        #campoBusca:focus {
+            outline: none;
+            border-color: var(--azul);
+            box-shadow: 0 0 20px rgba(0, 194, 255, 0.3);
+        }
+
+        .busca-icon {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--azul);
+        }
+
+        /* ===== SEÇÃO DE PRODUTOS ===== */
+        .produtos-section {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .produtos-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .produtos-header h2 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--roxo), var(--azul));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .produtos-count {
+            color: var(--texto-cinza);
+            font-size: 1.1rem;
+        }
+
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .produto-card {
+            background: var(--fundo-card);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            position: relative;
+            opacity: 0;
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .produto-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--azul);
+            box-shadow: 0 10px 40px rgba(0, 194, 255, 0.3);
+        }
+
+        .produto-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: linear-gradient(135deg, var(--magenta), var(--roxo));
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            z-index: 1;
+            box-shadow: 0 0 15px rgba(255, 0, 110, 0.6);
+        }
+
+        .produto-imagem {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, rgba(123, 47, 190, 0.2), rgba(0, 194, 255, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .produto-imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .produto-card:hover .produto-imagem img {
+            transform: scale(1.1);
+        }
+
+        .produto-placeholder {
+            font-size: 4rem;
+            color: var(--azul);
+            opacity: 0.5;
+        }
+
+        .produto-info {
+            padding: 1.5rem;
+        }
+
+        .produto-nome {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            min-height: 3rem;
+        }
+
+        .produto-descricao {
+            color: var(--texto-cinza);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            min-height: 2.5rem;
+        }
+
+        .produto-precos {
+            margin-bottom: 1rem;
+        }
+
+        .preco-original {
+            text-decoration: line-through;
+            color: var(--texto-cinza);
+            font-size: 0.9rem;
+        }
+
+        .preco-atual {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--azul), var(--magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .produto-acoes {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .btn-comprar {
+            flex: 1;
+            background: var(--verde-whats);
+            color: white;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-comprar:hover {
+            background: #1fb855;
+            box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .btn-detalhes {
+            padding: 0.9rem 1.2rem;
+            background: rgba(123, 47, 190, 0.2);
+            border: 2px solid var(--roxo);
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-detalhes:hover {
+            background: var(--roxo);
+            box-shadow: 0 0 20px rgba(123, 47, 190, 0.5);
+        }
+
+        /* ===== SEÇÃO POR QUE ESCOLHER ===== */
+        .escolher-section {
+            background: var(--fundo-card);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .escolher-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .escolher-container h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--roxo), var(--azul));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .escolher-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .escolher-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(123, 47, 190, 0.1);
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .escolher-card:hover {
+            border-color: var(--azul);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 194, 255, 0.2);
+        }
+
+        .escolher-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--roxo), var(--azul));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .escolher-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .escolher-card p {
+            color: var(--texto-cinza);
+        }
+
+        /* ===== SEÇÃO PAGAMENTO ===== */
+        .pagamento-section {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .pagamento-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--roxo), var(--azul));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .pagamento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pagamento-card {
+            background: var(--fundo-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgba(123, 47, 190, 0.3);
+            transition: all 0.3s;
+        }
+
+        .pagamento-card:hover {
+            border-color: var(--azul);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 194, 255, 0.2);
+        }
+
+        .pagamento-card.destaque {
+            border-color: var(--verde-whats);
+            box-shadow: 0 0 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .pagamento-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .pagamento-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pagamento-card p {
+            color: var(--texto-cinza);
+            font-size: 0.9rem;
+        }
+
+        .pagamento-desconto {
+            display: inline-block;
+            background: var(--verde-whats);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+
+        /* ===== SEÇÃO CONTATO CTA ===== */
+        .contato-cta {
+            background: linear-gradient(135deg, var(--roxo), var(--azul));
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contato-cta::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 0, 110, 0.3), transparent);
+            top: -250px;
+            right: -250px;
+            animation: float 10s infinite;
+        }
+
+        .contato-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contato-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contato-content p {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .horario {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-whatsapp-grande {
+            background: var(--verde-whats);
+            color: white;
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp-grande:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(37, 211, 102, 0.6);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--fundo-card);
+            padding: 3rem 2rem 1.5rem;
+            border-top: 1px solid rgba(123, 47, 190, 0.3);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 10px rgba(123, 47, 190, 0.6));
+        }
+
+        .footer-sobre {
+            color: var(--texto-cinza);
+            line-height: 1.6;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--azul);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--texto-cinza);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--azul);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .social-icons a {
+            color: var(--texto-cinza);
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--azul);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(123, 47, 190, 0.2);
+            color: var(--texto-cinza);
+        }
+
+        /* ===== BOTÃO FLUTUANTE WHATSAPP ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--verde-whats);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.5);
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 35px rgba(37, 211, 102, 0.7);
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--fundo-card);
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
+            padding: 2rem;
+            position: relative;
+            border: 2px solid var(--azul);
+            box-shadow: 0 0 50px rgba(0, 194, 255, 0.5);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--texto-cinza);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: var(--magenta);
+        }
+
+        .modal-imagem {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(123, 47, 190, 0.2), rgba(0, 194, 255, 0.2));
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .modal-nome {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-descricao {
+            color: var(--texto-cinza);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .modal-preco {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--azul), var(--magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .produtos-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .produtos-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 1.8rem;
+            }
+
+            .categorias-bar {
+                top: 80px;
+            }
+        }
+
+        /* ===== MENSAGEM VAZIO ===== */
+        .mensagem-vazio {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--texto-cinza);
+        }
+
+        .mensagem-vazio i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .mensagem-vazio h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="https://www.genspark.ai/api/files/s/vGKZtrbc" alt="Parts J&L Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#categorias">Categorias</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-whatsapp-header" id="btnWhatsHeader">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-particles" id="particlesContainer"></div>
+        <div class="hero-content">
+            <h1>PARTS J&L</h1>
+            <h2>Peças e Acessórios para Celular de Alta Qualidade</h2>
+            <p>Telas | Baterias | Tampas | Conectores | e muito mais!</p>
+            <a href="#produtos" class="btn-cta">VER PRODUTOS</a>
+        </div>
+    </section>
+
+    <!-- BARRA DE CATEGORIAS -->
+    <div class="categorias-bar" id="categorias">
+        <div class="categorias-container">
+            <ul class="categorias-list">
+                <li class="categoria-item active" data-categoria="todas">
+                    <i class="fas fa-th"></i> Todas
+                </li>
+                <li class="categoria-item" data-categoria="telas">
+                    <i class="fas fa-mobile-alt"></i> Telas
+                </li>
+                <li class="categoria-item" data-categoria="baterias">
+                    <i class="fas fa-battery-full"></i> Baterias
+                </li>
+                <li class="categoria-item" data-categoria="conectores">
+                    <i class="fas fa-plug"></i> Conectores
+                </li>
+                <li class="categoria-item" data-categoria="tampas">
+                    <i class="fas fa-tablet-alt"></i> Tampas Traseiras
+                </li>
+                <li class="categoria-item" data-categoria="ferramentas">
+                    <i class="fas fa-tools"></i> Ferramentas
+                </li>
+                <li class="categoria-item" data-categoria="acessorios">
+                    <i class="fas fa-box"></i> Acessórios
+                </li>
+                <li class="categoria-item" data-categoria="cabos">
+                    <i class="fas fa-headphones"></i> Fones/Cabos
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- BUSCA -->
+    <section class="busca-section">
+        <div class="busca-container">
+            <input type="text" id="campoBusca" placeholder="Buscar produtos...">
+            <i class="fas fa-search busca-icon"></i>
+        </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section class="produtos-section" id="produtos">
+        <div class="produtos-header">
+            <h2>Nossos Produtos</h2>
+            <span class="produtos-count" id="produtosCount">0 produtos</span>
+        </div>
+        <div class="produtos-grid" id="produtosGrid"></div>
+        <div class="mensagem-vazio" id="mensagemVazio" style="display: none;">
+            <i class="fas fa-search"></i>
+            <h3>Nenhum produto encontrado</h3>
+            <p>Tente buscar com outros termos ou navegue pelas categorias</p>
+        </div>
+    </section>
+
+    <!-- POR QUE ESCOLHER -->
+    <section class="escolher-section" id="sobre">
+        <div class="escolher-container">
+            <h2>Por Que Escolher a Parts J&L?</h2>
+            <div class="escolher-grid">
+                <div class="escolher-card">
+                    <div class="escolher-icon">✅</div>
+                    <h3>Peças Originais e Compatíveis</h3>
+                    <p>Qualidade garantida em todos os produtos</p>
+                </div>
+                <div class="escolher-card">
+                    <div class="escolher-icon">🚚</div>
+                    <h3>Entrega Rápida</h3>
+                    <p>Enviamos para todo o Brasil com agilidade</p>
+                </div>
+                <div class="escolher-card">
+                    <div class="escolher-icon">🔧</div>
+                    <h3>Suporte Técnico</h3>
+                    <p>Equipe especializada para te ajudar</p>
+                </div>
+                <div class="escolher-card">
+                    <div class="escolher-icon">💰</div>
+                    <h3>Melhor Preço Garantido</h3>
+                    <p>Preços competitivos e condições especiais</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMAS DE PAGAMENTO -->
+    <section class="pagamento-section">
+        <h2>Formas de Pagamento</h2>
+        <div class="pagamento-grid">
+            <div class="pagamento-card destaque">
+                <div class="pagamento-icon">💚</div>
+                <h3>PIX</h3>
+                <p>Pagamento instantâneo</p>
+                <span class="pagamento-desconto">5% DE DESCONTO</span>
+            </div>
+            <div class="pagamento-card">
+                <div class="pagamento-icon">💳</div>
+                <h3>Cartão de Crédito</h3>
+                <p>Até 12x sem juros</p>
+            </div>
+            <div class="pagamento-card">
+                <div class="pagamento-icon">💳</div>
+                <h3>Cartão de Débito</h3>
+                <p>À vista com segurança</p>
+            </div>
+            <div class="pagamento-card">
+                <div class="pagamento-icon">🎫</div>
+                <h3>Boleto Bancário</h3>
+                <p>À vista com desconto</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO CTA -->
+    <section class="contato-cta" id="contato">
+        <div class="contato-content">
+            <h2>Fale Conosco pelo WhatsApp!</h2>
+            <p id="numeroWhatsDisplay">📱 (11) 99999-9999</p>
+            <p class="horario" id="horarioDisplay">Seg-Sex: 8h às 18h | Sáb: 8h às 13h</p>
+            <a href="#" class="btn-whatsapp-grande" id="btnWhatsGrande">
+                <i class="fab fa-whatsapp"></i>
+                FALAR NO WHATSAPP
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="https://www.genspark.ai/api/files/s/vGKZtrbc" alt="Parts J&L Logo">
+                <p class="footer-sobre">Parts J&L - Especialistas em peças e acessórios para celular. Qualidade e confiança desde 2020.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#categorias">Categorias</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Categorias</h3>
+                <ul class="footer-links">
+                    <li><a href="#" data-categoria="telas">Telas</a></li>
+                    <li><a href="#" data-categoria="baterias">Baterias</a></li>
+                    <li><a href="#" data-categoria="conectores">Conectores</a></li>
+                    <li><a href="#" data-categoria="tampas">Tampas Traseiras</a></li>
+                    <li><a href="#" data-categoria="ferramentas">Ferramentas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" id="socialWhats" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+                <p style="margin-top: 1rem; color: var(--texto-cinza);" id="instagramDisplay">@partsjel</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Parts J&L. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <div class="whatsapp-float" id="whatsFloat">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal" id="modalProduto">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-imagem" id="modalImagem">
+                <i class="fas fa-mobile-alt produto-placeholder"></i>
+            </div>
+            <h2 class="modal-nome" id="modalNome"></h2>
+            <p class="modal-descricao" id="modalDescricao"></p>
+            <div class="modal-preco" id="modalPreco"></div>
+            <button class="btn-comprar" id="modalComprar" style="width: 100%;">
+                <i class="fab fa-whatsapp"></i>
+                COMPRAR VIA WHATSAPP
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // ===== CONFIGURAÇÕES DA LOJA - EDITE AQUI =====
+        const CONFIG = {
+            nomeLoja: "Parts J&L",
+            whatsapp: "5511999999999", // ALTERE PARA SEU NÚMERO COM DDI (ex: 5511999999999)
+            instagram: "@partsjel",
+            horarioAtendimento: "Seg-Sex: 8h às 18h | Sáb: 8h às 13h",
+            pixDesconto: 5, // % de desconto no PIX
+            parcelas: 12, // máximo de parcelas no cartão
+        };
+
+        // ===== EDITE SEUS PRODUTOS AQUI =====
+        const produtos = [
+            {
+                id: 1,
+                nome: "Tela iPhone 13 Pro - OLED",
+                preco: 189.90,
+                precoOriginal: 249.90,
+                categoria: "telas",
+                imagem: null, // Coloque a URL da imagem aqui
+                descricao: "Display OLED completo com touch",
+                badge: "MAIS VENDIDO",
+                estoque: true
+            },
+            {
+                id: 2,
+                nome: "Tela iPhone 12 - Original",
+                preco: 169.90,
+                precoOriginal: 229.90,
+                categoria: "telas",
+                imagem: null,
+                descricao: "Tela original Apple com garantia",
+                badge: "OFERTA",
+                estoque: true
+            },
+            {
+                id: 3,
+                nome: "Tela Samsung S21 - AMOLED",
+                preco: 199.90,
+                precoOriginal: null,
+                categoria: "telas",
+                imagem: null,
+                descricao: "Display AMOLED de alta qualidade",
+                badge: null,
+                estoque: true
+            },
+            {
+                id: 4,
+                nome: "Tela Motorola G30 - Incell",
+                preco: 89.90,
+                precoOriginal: 129.90,
+                categoria: "telas",
+                imagem: null,
+                descricao: "Tela Incell com excelente custo-benefício",
+                badge: "PROMOÇÃO",
+                estoque: true
+            },
+            {
+                id: 5,
+                nome: "Tela iPhone 11 - LCD",
+                preco: 149.90,
+                precoOriginal: null,
+                categoria: "telas",
+                imagem: null,
+                descricao: "Display LCD de qualidade premium",
+                badge: null,
+                estoque: true
+            },
+            {
+                id: 6,
+                nome: "Bateria iPhone 12 - Original",
+                preco: 79.90,
+                precoOriginal: 99.90,
+                categoria: "baterias",
+                imagem: null,
+                descricao: "Bateria original com alta durabilidade",
+                badge: "MAIS VENDIDO",
+                estoque: true
+            },
+            {
+                id: 7,
+                nome: "Bateria Samsung A52 - 4500mAh",
+                preco: 69.90,
+                precoOriginal: null,
+                categoria: "baterias",
+                imagem: null,
+                descricao: "Bateria de longa duração",
+                badge: null,
+                estoque: true
+            },
+            {
+                id: 8,
+                nome: "Flex Conector Lightning iPhone",
+                preco: 39.90,
+                precoOriginal: 59.90,
+                categoria: "conectores",
+                imagem: null,
+                descricao: "Conector de carga original",
+                badge: "OFERTA",
+                estoque: true
+            },
+            {
+                id: 9,
+                nome: "Flex USB-C Samsung Galaxy",
+                preco: 34.90,
+                precoOriginal: null,
+                categoria: "conectores",
+                imagem: null,
+                descricao: "Conector USB-C para Samsung",
+                badge: null,
+                estoque: true
+            },
+            {
+                id: 10,
+                nome: "Tampa Traseira iPhone 13 Pro Max",
+                preco: 129.90,
+                precoOriginal: 169.90,
+                categoria: "tampas",
+                imagem: null,
+                descricao: "Tampa traseira original em vidro",
+                badge: "NOVO",
+                estoque: true
+            },
+            {
+                id: 11,
+                nome: "Kit Ferramentas Abertura - 32 Peças",
+                preco: 49.90,
+                precoOriginal: null,
+                categoria: "ferramentas",
+                imagem: null,
+                descricao: "Kit completo para manutenção",
+                badge: "ESSENCIAL",
+                estoque: true
+            },
+            {
+                id: 12,
+                nome: "Cabo USB-C para Lightning - 1m",
+                preco: 29.90,
+                precoOriginal: 49.90,
+                categoria: "cabos",
+                imagem: null,
+                descricao: "Cabo de carregamento rápido",
+                badge: "OFERTA",
+                estoque: true
+            },
+            {
+                id: 13,
+                nome: "Fone de Ouvido Type-C - Original",
+                preco: 39.90,
+                precoOriginal: null,
+                categoria: "cabos",
+                imagem: null,
+                descricao: "Fone com microfone e controle de volume",
+                badge: null,
+                estoque: true
+            },
+            {
+                id: 14,
+                nome: "Película 3D iPhone 13 Pro",
+                preco: 19.90,
+                precoOriginal: null,
+                categoria: "acessorios",
+                imagem: null,
+                descricao: "Proteção completa para a tela",
+                badge: null,
+                estoque: true
+            },
+            {
+                id: 15,
+                nome: "Capinha Magnética iPhone 14",
+                preco: 59.90,
+                precoOriginal: 89.90,
+                categoria: "acessorios",
+                imagem: null,
+                descricao: "Capa compatível com MagSafe",
+                badge: "LANÇAMENTO",
+                estoque: true
+            }
+        ];
+
+        // ===== FUNÇÕES PRINCIPAIS =====
+        let produtosFiltrados = [...produtos];
+        let categoriaAtual = 'todas';
+
+        // Renderizar produtos
+        function renderizarProdutos() {
+            const grid = document.getElementById('produtosGrid');
+            const count = document.getElementById('produtosCount');
+            const mensagemVazio = document.getElementById('mensagemVazio');
+
+            grid.innerHTML = '';
+
+            if (produtosFiltrados.length === 0) {
+                mensagemVazio.style.display = 'block';
+                grid.style.display = 'none';
+                count.textContent = '0 produtos';
+                return;
+            }
+
+            mensagemVazio.style.display = 'none';
+            grid.style.display = 'grid';
+            count.textContent = `${produtosFiltrados.length} produto${produtosFiltrados.length !== 1 ? 's' : ''}`;
+
+            produtosFiltrados.forEach((produto, index) => {
+                const card = document.createElement('div');
+                card.className = 'produto-card';
+                card.style.animationDelay = `${index * 0.1}s`;
+
+                const badgeHTML = produto.badge ? `<div class="produto-badge">${produto.badge}</div>` : '';
+                
+                const imagemHTML = produto.imagem 
+                    ? `<img src="${produto.imagem}" alt="${produto.nome}">`
+                    : `<i class="fas fa-mobile-alt produto-placeholder"></i>`;
+
+                const precoOriginalHTML = produto.precoOriginal 
+                    ? `<div class="preco-original">De R$ ${produto.precoOriginal.toFixed(2)}</div>`
+                    : '';
+
+                card.innerHTML = `
+                    ${badgeHTML}
+                    <div class="produto-imagem">
+                        ${imagemHTML}
+                    </div>
+                    <div class="produto-info">
+                        <h3 class="produto-nome">${produto.nome}</h3>
+                        <p class="produto-descricao">${produto.descricao}</p>
+                        <div class="produto-precos">
+                            ${precoOriginalHTML}
+                            <div class="preco-atual">R$ ${produto.preco.toFixed(2)}</div>
+                        </div>
+                        <div class="produto-acoes">
+                            <button class="btn-comprar" onclick="comprarViaWhatsApp(${produto.id})">
+                                <i class="fab fa-whatsapp"></i>
+                                COMPRAR
+                            </button>
+                            <button class="btn-detalhes" onclick="abrirModal(${produto.id})">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        // Filtrar por categoria
+        function filtrarPorCategoria(categoria) {
+            categoriaAtual = categoria;
+            aplicarFiltros();
+            
+            // Atualizar UI das categorias
+            document.querySelectorAll('.categoria-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelector(`[data-categoria="${categoria}"]`).classList.add('active');
+
+            // Scroll suave para produtos
+            document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Buscar produtos
+        function buscarProdutos(termo) {
+            aplicarFiltros(termo);
+        }
+
+        // Aplicar filtros (categoria + busca)
+        function aplicarFiltros(termoBusca = '') {
+            produtosFiltrados = produtos.filter(produto => {
+                const matchCategoria = categoriaAtual === 'todas' || produto.categoria === categoriaAtual;
+                const matchBusca = termoBusca === '' || 
+                    produto.nome.toLowerCase().includes(termoBusca.toLowerCase()) ||
+                    produto.descricao.toLowerCase().includes(termoBusca.toLowerCase());
+                
+                return matchCategoria && matchBusca;
+            });
+
+            renderizarProdutos();
+        }
+
+        // Abrir WhatsApp para compra
+        function comprarViaWhatsApp(produtoId) {
+            const produto = produtos.find(p => p.id === produtoId);
+            const mensagem = `Olá! Tenho interesse no produto:\n\n*${produto.nome}*\nR$ ${produto.preco.toFixed(2)}\n\nGostaria de mais informações!`;
+            const url = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+
+        // Abrir modal de detalhes
+        function abrirModal(produtoId) {
+            const produto = produtos.find(p => p.id === produtoId);
+            const modal = document.getElementById('modalProduto');
+            
+            document.getElementById('modalNome').textContent = produto.nome;
+            document.getElementById('modalDescricao').textContent = produto.descricao;
+            document.getElementById('modalPreco').textContent = `R$ ${produto.preco.toFixed(2)}`;
+            
+            const modalImagem = document.getElementById('modalImagem');
+            if (produto.imagem) {
+                modalImagem.innerHTML = `<img src="${produto.imagem}" alt="${produto.nome}">`;
+            } else {
+                modalImagem.innerHTML = '<i class="fas fa-mobile-alt produto-placeholder"></i>';
+            }
+
+            document.getElementById('modalComprar').onclick = () => comprarViaWhatsApp(produtoId);
+
+            modal.classList.add('active');
+        }
+
+        // Fechar modal
+        function fecharModal() {
+            document.getElementById('modalProduto').classList.remove('active');
+        }
+
+        // Criar partículas no hero
+        function criarParticulas() {
+            const container = document.getElementById('particlesContainer');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = Math.random() * 5 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Atualizar informações de contato
+        function atualizarInformacoesContato() {
+            const numeroFormatado = CONFIG.whatsapp.replace(/(\d{2})(\d{2})(\d{5})(\d{4})/, '+$1 ($2) $3-$4');
+            document.getElementById('numeroWhatsDisplay').innerHTML = `📱 ${numeroFormatado}`;
+            document.getElementById('horarioDisplay').textContent = CONFIG.horarioAtendimento;
+            document.getElementById('instagramDisplay').textContent = CONFIG.instagram;
+        }
+
+        // ===== EVENT LISTENERS =====
+        document.addEventListener('DOMContentLoaded', () => {
+            renderizarProdutos();
+            criarParticulas();
+            atualizarInformacoesContato();
+
+            // Categorias
+            document.querySelectorAll('.categoria-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const categoria = item.dataset.categoria;
+                    filtrarPorCategoria(categoria);
+                });
+            });
+
+            // Categorias no footer
+            document.querySelectorAll('.footer-links a[data-categoria]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const categoria = link.dataset.categoria;
+                    filtrarPorCategoria(categoria);
+                });
+            });
+
+            // Busca
+            const campoBusca = document.getElementById('campoBusca');
+            campoBusca.addEventListener('input', (e) => {
+                buscarProdutos(e.target.value);
+            });
+
+            // Modal
+            document.getElementById('modalClose').addEventListener('click', fecharModal);
+            document.getElementById('modalProduto').addEventListener('click', (e) => {
+                if (e.target.id === 'modalProduto') {
+                    fecharModal();
+                }
+            });
+
+            // WhatsApp buttons
+            const whatsappURL = `https://wa.me/${CONFIG.whatsapp}`;
+            document.getElementById('btnWhatsHeader').href = whatsappURL;
+            document.getElementById('btnWhatsGrande').href = whatsappURL;
+            document.getElementById('whatsFloat').onclick = () => window.open(whatsappURL, '_blank');
+            document.getElementById('socialWhats').href = whatsappURL;
+
+            // Scroll suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && !this.dataset.categoria) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
